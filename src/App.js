@@ -1,6 +1,7 @@
 import './App.css';
 import ExpenseItem from './components/ExpenseItem'
 import Expense from './components/Expense'
+import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
 
   const expense = [
@@ -14,7 +15,7 @@ function App() {
   return (
     <>
       <h1>React.js</h1>
-      <h2>Welcome to react class</h2>
+      <h2 className='text-danger'>Welcome to react class</h2>
       <Expense data={expense}/>
     </>
   );
