@@ -1,14 +1,49 @@
-import React from 'react'
+import React ,{useState}from 'react'
 import './ExenseItem.css'
 
 function ExpenseItem(props) {
   // console.log("ExpenseItem -> props", props)
-  const {title, amount, date} = props;
+  const { amount, date} = props;
+  const expenseTitle = 'Devnation-Payment'
+  const [title, setTitle] = useState(expenseTitle)
+
+
+  // // const expenseData = 'March 24th, 2022'
+  
+  // // const expenseAmount = '5000'
+
+
+  // useState('')
+
+  // // const [variable1, setVariable] = useState('10')
+  // // console.log("ExpenseItem -> variable1", variable1)
   
 
-  // const expenseData = 'March 24th, 2022'
-  // const expenseTitle = 'Devnation-Payment'
-  // const expenseAmount = '5000'
+
+  // console.log("ExpenseItem -> title", title)
+  // console.log("Current Value", title)
+  
+
+
+  const buttonHandler = () =>{
+    console.log('button click')
+    setTitle("salman")
+    console.log("Changed Value", title)
+  }
+
+  const [count, setCount] = useState(16)
+
+  
+  // const incHandler = () =>{
+  //   setCount( count + 1 )
+
+  // }
+
+  // const decHandler = () => {
+  //   setCount( count - 1 )
+  // }
+
+
 
   return (
     <>
@@ -18,9 +53,16 @@ function ExpenseItem(props) {
           <div className="expenseItem-detail">
             <h2 className='text-danger'>{title}</h2>
             <div>Rs. {amount}</div>
+            <button  onClick={buttonHandler}>button</button>
           </div>
         </div>
       </div>
+
+      {/* <>
+        <button onClick={incHandler}>+</button> 
+        <h1>Count Value : {count}</h1>
+        <button onClick={decHandler}>-</button>
+      </> */}
     </>
   )
 }

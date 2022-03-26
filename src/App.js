@@ -14,8 +14,7 @@ function App() {
 
   return (
     <>
-      <h1>React.js</h1>
-      <h2 className='text-danger'>Welcome to react class</h2>
+   
       <Expense data={expense}/>
     </>
   );
