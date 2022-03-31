@@ -4,10 +4,23 @@ import ExpenseItem from './ExpenseItem'
 import ExpenseForm from './ExpenseForm';
 
 function Expense(props) {
-    const { data } = props;
+    console.log("Expense -> props", props)
+    const { data,onAddExpense } = props;
+
+    const onSubmitExpenseData =(expenseData) => {
+        console.log("Submit Expense =============>" , expenseData )
+        const id= Math.random().toString()
+
+        const expenseDataWithID ={
+            ...expenseData, ...id
+        }
+        console.log("onSubmitExpenseData -> expenseDataWithID", expenseDataWithID)
+        onAddExpense(expenseDataWithID)
+    }
+
     return (
         <div>
-            <ExpenseForm />
+            <ExpenseForm onSubmit = {onSubmitExpenseData} />
             <Card className='expense'>
                 <ExpenseItem title={data[0].title} amount={data[0].amount} date={data[0].date} />
                 {/* <ExpenseItem title={data[1].title} amount={data[1].amount} date={data[1].date} />
